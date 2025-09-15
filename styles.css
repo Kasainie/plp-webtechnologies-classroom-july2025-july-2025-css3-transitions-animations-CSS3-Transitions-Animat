@@ -1,0 +1,158 @@
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Part 1: CSS Transitions & Animations --- */
+
+/* Button Hover Effect (Transition) */
+.css-button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for properties */
+}
+
+.css-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px) scale(1.05); /* Slight lift and scale up */
+}
+
+/* Keyframe Animation */
+.animated-box {
+  width: 100px;
+  height: 100px;
+  background-color: #e74c3c;
+  margin-top: 20px;
+  border-radius: 5px;
+  animation: rotate-and-bounce 4s infinite ease-in-out; /* Apply the keyframe animation */
+}
+
+@keyframes rotate-and-bounce {
+  0% {
+    transform: rotate(0deg) scale(1);
+    background-color: #e74c3c;
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+    background-color: #f39c12;
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+    background-color: #f1c40f;
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1);
+    background-color: #2ecc71;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    background-color: #e74c3c;
+  }
+}
+
+/* --- Part 3: Combining CSS & JavaScript --- */
+
+/* Interactive Box Styling */
+.interactive-box {
+  width: 120px;
+  height: 120px;
+  background-color: #9b59b6;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: transform 0.5s ease-out, box-shadow 0.5s ease-out; /* Transition for JS-triggered effects */
+}
+
+/* Class to be added by JavaScript for animation */
+.interactive-box.animate-me {
+  transform: scale(1.5) rotate(45deg); /* Scale up and rotate */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a shadow */
+}
+
+/* Popup Styling */
+.popup {
+  position: fixed; /* Fixed position to cover the viewport */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Hidden by default */
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out; /* Smooth fade and visibility change */
+  z-index: 1000; /* Ensure it's on top */
+  display: flex; /* Use flexbox for centering content */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Class to show the popup */
+.popup.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  transform: translateY(-50px); /* Start slightly above its final position */
+  transition: transform 0.4s ease-in-out; /* Smooth slide-in */
+}
+
+/* Class to animate popup content sliding in */
+.popup.visible .popup-content {
+  transform: translateY(0); /* Slide into final position */
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  color: #3498db;
+}
+
+.popup-content button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.popup-content button:hover {
+  background-color: #c0392b;
+}
